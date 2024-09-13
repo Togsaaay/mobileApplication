@@ -17,10 +17,10 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topImageContainer}>
-        <Image style={styles.topImage} source={require("../assets/top.png")} />
+        <Image style={styles.topImage} source={require("../assets/blue.png")} />
       </View>
-      <Text style={styles.textEdit}>Sign In!</Text>
-      <Text style={styles.textHeading}>Login to your account!</Text>
+      <Text style={styles.textEdit}>Sign Up!</Text>
+      <Text style={styles.textHeading}>Create your account here!</Text>
       <View style={styles.inputContainer}>
         <View style={styles.inputSquare}>
           <Image

@@ -14,6 +14,15 @@ const HomeScreen = ({navigation}) => {
           <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.buttonSignUpContainer}>
+        <TouchableOpacity
+          style={styles.forButton}
+          onPress={() => {navigation.navigate('Registration');
+             console.log("Sign Up button pressed");
+            }}>
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -34,11 +43,18 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: '#4E9AF2',
-    width: "40%",
+    width: "50%",
     height: "5%",
-    borderWidth: 1,
     position: 'absolute',
-    bottom: 80,
+    bottom: 180,
+    borderRadius: 10,
+  },
+  buttonSignUpContainer: {
+    backgroundColor: '#4E9AF2',
+    width: "50%",
+    height: "5%",
+    position: 'absolute',
+    bottom: 100,
     borderRadius: 10,
   },
   forButton: {
@@ -50,5 +66,5 @@ const styles = StyleSheet.create({
     color: "white", 
     fontSize: 30,
     fontWeight: 'bold',
-  }
+  },
 });
