@@ -9,7 +9,7 @@ const HomeScreen = ({navigation}) => {
         <TouchableOpacity
           style={styles.forButton}
           onPress={() => {navigation.navigate('Login');
-             console.log("Sign in button pressed");
+             console.log("Sign in button pressed"); 
             }}>
           <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>

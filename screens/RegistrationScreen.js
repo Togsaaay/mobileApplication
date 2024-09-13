@@ -12,7 +12,7 @@ import {
 import React, { useState } from "react";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -82,6 +82,18 @@ const LoginScreen = () => {
           </View>
         </View>
       </Modal>
+
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Login");
+          console.log("Sign in nalang siya");
+        }}
+      >
+        <Text style={styles.withoutAccount}>
+          Already have an account? Sign In
+        </Text>
+      </TouchableOpacity>
+      <View style={styles.line}></View>
 {/*
       <View style={styles.line}></View>
       <View style={styles.socMedContainer}>
@@ -144,7 +156,7 @@ export default LoginScreen;
       flexDirection: "row",
       marginHorizontal: 50,
       marginVertical: 50,
-      marginTop: 30,
+      marginTop: 60,
       borderBottomWidth: 1, 
       height: 50,
       alignItems: "center",    
@@ -197,13 +209,14 @@ export default LoginScreen;
     },
     forButton: {
       width: "80%",
+      height: "5%",
       backgroundColor: "#4E9AF2",
       paddingVertical: 10,
       justifyContent: "center",
       alignItems: "center",
       borderWidth: 1,
       borderRadius: 10,
-      marginTop: 80,
+      marginTop: 90,
     },
     buttonText: {
       color: "white",
@@ -236,7 +249,8 @@ export default LoginScreen;
       backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
     modalView: {
-      width: "80%",
+      width: "100%",
+      height: "20%",
       padding: 20,
       backgroundColor: "white",
       borderRadius: 20,
@@ -259,5 +273,17 @@ export default LoginScreen;
       fontWeight: "bold",
       fontSize: 16,
       textAlign: "center",
+    },
+
+    withoutAccount: {
+      fontSize: 20,
+      marginTop: 100,
+      color: "blue",
+    },
+    line: {
+      width: "80%",
+      height: 1,
+      backgroundColor: "gray",
+      marginTop: 10,
     },
   });

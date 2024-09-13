@@ -10,8 +10,9 @@ import {
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ const LoginScreen = () => {
       </View>
       <Text style={styles.textEdit}>Sign In!</Text>
       <Text style={styles.textHeading}>Login to your account!</Text>
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
         <View style={styles.inputSquare}>
           <Image
             style={styles.emailPic}
@@ -36,7 +37,26 @@ const LoginScreen = () => {
           />
           <TextInput style={styles.inputs} placeholder="Password" />
         </View>
+      </View> */}
+      <View style={styles.emailcontainer}>
+        <FontAwesome
+          name="user"
+          size={15}
+          color="black"
+          style={styles.iconStyle}
+        />
+        <TextInput style={styles.emailTextInput} placeholder="username" />
       </View>
+      <View style={styles.namecontainer}>
+        <FontAwesome
+          name="lock"
+          size={20}
+          color="black"
+          style={styles.iconStyle}
+        />
+        <TextInput style={styles.nameTextInput} placeholder="password" />
+      </View>
+
       <View style={styles.forgotContainer}>
         <TouchableOpacity
           onPress={() => {
@@ -67,7 +87,9 @@ const LoginScreen = () => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Char, naka login siya baii! HAHAHAHAHAHAHAH</Text>
+            <Text style={styles.modalText}>
+              Char, naka login siya baii! HAHAHAHAHAHAHAH
+            </Text>
             <Pressable
               style={styles.buttonOk}
               onPress={() => setModalVisible(false)}
@@ -78,6 +100,16 @@ const LoginScreen = () => {
         </View>
       </Modal>
 
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Registration");
+          console.log("Sign Up button pressed");
+        }}
+      >
+        <Text style={styles.withoutAccount}>
+          Don't have an account? Sign Up
+        </Text>
+      </TouchableOpacity>
       <View style={styles.line}></View>
       <View style={styles.socMedContainer}>
         <TouchableOpacity
@@ -165,6 +197,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   textForgot: {
+    marginTop: 30,
     fontSize: 20,
     color: "blue",
   },
@@ -189,11 +222,16 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
+  withoutAccount: {
+    fontSize: 20,
+    marginTop: 100,
+    color: "blue",
+  },
   line: {
     width: "80%",
     height: 1,
     backgroundColor: "gray",
-    marginTop: 80,
+    marginTop: 10,
   },
   socMedPic: {
     width: 60,
@@ -220,32 +258,65 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalView: {
-    width: '100%',
-    height: '30%',
+    width: "100%",
+    height: "30%",
     margin: 20,
     backgroundColor: "white",
     borderRadius: 20,
-    flexDirection: 'column',
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: 'center',
-    gap: 50
+    justifyContent: "center",
+    gap: 50,
   },
   buttonOk: {
-    width: '80%',
-    height: '20%',
+    width: "80%",
+    height: "20%",
     borderRadius: 10,
     backgroundColor: "#2196F3",
-    borderWidth: 1
+    borderWidth: 1,
   },
   textStyle: {
     color: "white",
     fontWeight: "bold",
     fontSize: 30,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 15,
   },
   modalText: {
     textAlign: "center",
     fontSize: 30,
+  },
+
+  emailcontainer: {
+    borderBlockColor: "gray",
+    flexDirection: "row",
+    marginHorizontal: 50,
+    marginVertical: 50,
+    marginTop: 60,
+    borderBottomWidth: 1, 
+    height: 50,
+    alignItems: "center",    
+  },
+  emailTextInput: {
+    height: 50,
+    width: "90%",
+    padding: 10,
+    fontSize: 19,
+  },
+  namecontainer: {
+    borderBlockColor: "gray",
+    flexDirection: "row",
+    marginHorizontal: 50,
+    marginVertical: -20,
+    marginTop: -40,
+    height: 50,
+    borderBottomWidth: 1, 
+    alignItems: "center",
+  },
+  nameTextInput: {
+    height: 50,
+    width: "90%",
+    padding: 10,
+    fontSize: 19,
   },
 });
