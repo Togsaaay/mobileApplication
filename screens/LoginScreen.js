@@ -88,7 +88,7 @@ const LoginScreen = ({ navigation }) => {
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>
-              Char, naka login siya baii! HAHAHAHAHAHAHAH
+              You are successfully logged in. Welcome to Janith & Trixie's mobile App!
             </Text>
             <Pressable
               style={styles.buttonOk}

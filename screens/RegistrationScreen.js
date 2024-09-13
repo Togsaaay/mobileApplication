@@ -71,7 +71,7 @@ const LoginScreen = ({navigation}) => {
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>
-              Char, naka sign up siya baii! HAHAHAHAHAHAHAH
+              You created your account successfully. Welcome to JT!
             </Text>
             <Pressable
               style={styles.buttonOk}
@@ -91,7 +91,7 @@ const LoginScreen = ({navigation}) => {
       >
         <Text style={styles.withoutAccount}>
           Already have an account? Sign In
-        </Text>
+        </Text> 
       </TouchableOpacity>
       <View style={styles.line}></View>
 {/*
